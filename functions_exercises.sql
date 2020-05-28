@@ -54,7 +54,7 @@ WHERE last_name LIKE '%q%';
 SELECT emp_no, birth_date, concat_ws(' ', first_name, last_name) AS 'full_name', gender, hire_date
 FROM employees
 WHERE (last_name LIKE 'E%'
-    OR last_name LIKE '%E');
+    AND last_name LIKE '%E');
 
 # Exercise 3
 SELECT *, datediff(curdate(), hire_date) AS 'days working in the company'
