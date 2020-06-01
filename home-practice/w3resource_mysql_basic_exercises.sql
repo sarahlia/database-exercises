@@ -38,4 +38,44 @@ FROM employees;
 SELECT COUNT(DISTINCT JOB_ID) AS 'Number of unique jobs'
 FROM employees;
 
+#EXERCISE 11
+SELECT UPPER(FIRST_NAME)
+FROM employees;
+
+#EXERCISE 12: select first 3 characters of first name of all employees. first letter=1, span=3
+SELECT SUBSTRING(FIRST_NAME, 1, 3)
+FROM employees;
+
+#EXERCISE 13
+SELECT ((171 * 214) + 625);
+
+#EXERCISE 14
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'Employee Name'
+FROM employees;
+
+#EXERCISE 15
+SELECT TRIM(FIRST_NAME)
+FROM employees;
+
+#EXERCISE 16
+SELECT first_name, last_name, LENGTH(first_name) + LENGTH(last_name) AS 'Length of Name'
+FROM employees;
+
+#EXERCISE 17: check if FIRST_NAME contains numbers
+SELECT *
+FROM employees
+WHERE FIRST_NAME REGEXP '[0-9]';
+
+#EXERCISE 18
+SELECT *
+FROM employees
+ORDER BY EMPLOYEE_ID
+LIMIT 10;
+
+#EXERCISE 19
+SELECT FIRST_NAME, LAST_NAME, ROUND(SALARY/12, 2) AS 'Monthly Salary'
+FROM employees;
+
+
+
 
