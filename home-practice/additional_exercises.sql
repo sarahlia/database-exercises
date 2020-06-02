@@ -27,9 +27,31 @@ ORDER BY Results DESC
 LIMIT 1;
 
 #the most common 'from date' for staff only?
-SELECT from_date, COUNT(from_date) AS 'Results'
+SELECT from_date, COUNT(from_date) AS Results
 FROM titles
 WHERE title = 'Staff'
 GROUP BY from_date
 ORDER BY Results DESC
 LIMIT 1;
+
+#Exercise 4: the highest employee number for an engineer
+SELECT MAX(emp_no) AS Highest_employee_number_for_an_Engineer
+FROM titles
+WHERE title = 'Engineer';
+
+#Exercise 5:  names of the 10 most recently hired females in the company?
+SELECT CONCAT(first_name, ' ', last_name) AS full_name, hire_date
+FROM employees
+WHERE gender = 'F'
+ORDER BY hire_date DESC
+LIMIT 10;
+
+#the names of the first 10 females hired?
+SELECT CONCAT(first_name, ' ', last_name) AS full_name, hire_date
+FROM employees
+WHERE gender = 'F'
+ORDER BY hire_date
+LIMIT 10;
+
+
+
