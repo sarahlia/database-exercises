@@ -53,5 +53,49 @@ WHERE gender = 'F'
 ORDER BY hire_date
 LIMIT 10;
 
+#Exercise 6: the most common birthday
+SELECT birth_date, COUNT(birth_date) AS Results
+FROM employees
+GROUP BY birth_date
+ORDER BY Results DESC
+LIMIT 1;
 
+#Exercise 7:  the most common female birthday
+SELECT birth_date, COUNT(birth_date) AS Results
+FROM employees
+WHERE gender = 'F'
+GROUP BY birth_date
+ORDER BY Results DESC
+LIMIT 1;
 
+# the most common male birthday
+SELECT birth_date, COUNT(birth_date) AS Results
+FROM employees
+WHERE gender = 'M'
+GROUP BY birth_date
+ORDER BY Results DESC
+LIMIT 1;
+
+#Exercise 8: the most common hire date for female employees
+SELECT hire_date, COUNT(hire_date) AS Results
+from employees
+WHERE gender = 'F'
+GROUP BY hire_date
+ORDER BY Results DESC
+LIMIT 1;
+
+# the most common hire date for male employees
+SELECT hire_date, COUNT(hire_date) AS Results
+from employees
+WHERE gender = 'M'
+GROUP BY hire_date
+ORDER BY Results DESC
+LIMIT 1;
+
+#Exercise 9: the longest last name(s) of someone born on March 8, 1952?
+SELECT last_name, MAX(LENGTH(last_name)) AS 'Length of last name'
+FROM employees
+WHERE birth_date = '1952-03-08'
+GROUP BY last_name
+ORDER BY `Length of last name` DESC
+LIMIT 4;
